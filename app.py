@@ -84,7 +84,6 @@ def video_fabrikasi(konu, progress=gr.Progress()):
         image_prompts = [p.strip("123. ") for p in image_prompts]
 
         progress(0.20, desc="Seslendiriliyor...")
-        print("🗣 Seslendiriliyor...")
         voices = eleven_client.voices.get_all()
         target_voice_id = next((v.voice_id for v in voices.voices if "Adam" in v.name), voices.voices[0].voice_id)
         
@@ -95,7 +94,6 @@ def video_fabrikasi(konu, progress=gr.Progress()):
             for chunk in audio_generator: f.write(chunk)
 
         progress(0.35,desc="Görseller çiziliyor...")
-        print("🎨 Görseller çiziliyor...")
         resim_dosyalari = []
         api_url = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell" 
         headers = {"Authorization": f"Bearer {HF_TOKEN}"}
@@ -116,11 +114,9 @@ def video_fabrikasi(konu, progress=gr.Progress()):
             return None, "HATA: Görsel üretilemedi."
 
         progress(0.60, desc="Analiz ediliyor...")
-        
         audio_analysis = WHISPER_MODEL.transcribe("gecici_ses.mp3", word_timestamps=True)
         
         progress(0.70, desc="Arka plan montajı...")
-        
         ana_ses = AudioFileClip("gecici_ses.mp3")
         sahne_suresi = ana_ses.duration / len(resim_dosyalari)
         
