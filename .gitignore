@@ -1,1 +1,5 @@
 .env
+temp_*.png
+sahne_*.png
+*.mp3
+*TEMP_MPY*.mp4
