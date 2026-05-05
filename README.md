@@ -1,6 +1,6 @@
 # 🎬 AI Shorts Studio (Automated Video Generator)
 
-🌍 *[🇬🇧 Read in English](#-english) | [🇹🇷 Türkçe okumak için aşağı kaydırın](#-türkçe)*
+ *[🇬🇧 Read in English](#-english) | [🇹🇷 Türkçe okumak için aşağı kaydırın](#-türkçe)*
 
 ---
 
@@ -8,7 +8,7 @@
 
 An autonomous Python application that generates completely ready-to-upload YouTube Shorts from a single text prompt. The system orchestrates multiple AI models to handle scripting, voiceover, image generation, audio transcription, and video editing entirely in the background.
 
-### 🚀 Features & Pipeline
+###  Features & Pipeline
 * **Script & Prompt Generation:** Google Gemini 3.1 Flash Lite
 * **Voiceover (TTS):** ElevenLabs Multilingual V2
 * **Image Generation:** FLUX.1-schnell (via HuggingFace Inference API)
@@ -35,7 +35,7 @@ Then run: `python app.py`
 
 Tek bir metin girdisinden yola çıkarak YouTube Shorts videoları üreten otonom bir Python uygulaması. Sistem; senaryo yazımı, seslendirme, görsel üretimi, ses analizi ve video montajı işlemlerini arka planda tamamen yapay zeka modelleriyle halleder.
 
-### 🚀 Kullanılan Teknolojiler
+###  Kullanılan Teknolojiler
 * **Senaryo ve Prompt:** Google Gemini 3.1 Flash Lite
 * **Seslendirme (TTS):** ElevenLabs Multilingual V2
 * **Görsel Üretimi:** FLUX.1-schnell (HuggingFace Inference API)
@@ -57,5 +57,5 @@ Projeyi bilgisayarınızda çalıştırmak için API anahtarlarınızı içeren 
 Ardından çalıştırın: `python app.py`
 
 ---
-## 📸 Demo & Interface / Arayüz Görüntüsü
-*(Buraya daha sonra arayüzün bir ekran görüntüsünü ekleyeceğiz)*
+##  Demo & Interface / Arayüz Görüntüsü
+![AI Shorts Studio Arayüzü](demo.png)
