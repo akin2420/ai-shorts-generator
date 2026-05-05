@@ -136,7 +136,7 @@ def video_fabrikasi(konu, progress=gr.Progress()):
         video_arkaplan = concatenate_videoclips(klipler, method="compose").with_audio(ana_ses)
 
         progress(0.80, desc="Altyazılar çiziliyor...")
-        print("✍️ Altyazılar çiziliyor...")
+        
         altyazi_klipleri = []
         kelime_index = 0
         
@@ -156,7 +156,7 @@ def video_fabrikasi(konu, progress=gr.Progress()):
                     olusturulan_yazi_dosyalari.append(dosya_adi)
                     kelime_index += 1
         progress(0.90,desc="Render alınıyor...")
-        print(" Render alınıyor...")
+        
         final_video = CompositeVideoClip([video_arkaplan] + altyazi_klipleri, size=(V_GENISLIK, V_YUKSEKLIK))
         final_video.write_videofile(video_adi, fps=24, codec="libx264", audio_codec="aac")
         
@@ -174,9 +174,9 @@ def video_fabrikasi(konu, progress=gr.Progress()):
                 os.remove(dosya)
 
 
-# --- GRADIO ARAYÜZÜ (GELİŞMİŞ TASARIM) ---
+#UI
 
-# Arayüz için özel CSS (Animasyonlar, renkler ve gölgeler)
+
 custom_css = """
 body {
     background-color: #0d1117;
@@ -217,10 +217,9 @@ body {
 }
 """
 
-# Temayı Dark (Karanlık) yapıyoruz ve CSS'i ekliyoruz
 with gr.Blocks(theme=gr.themes.Base(), css=custom_css) as demo:
     
-    # Havalı Başlık
+    
     gr.Markdown("<h1 id='main-title'> AI Shorts Studio</h1>")
     gr.Markdown("<p id='sub-title'>Sadece konuyu yazın, gerisini yapay zekaya bırakın. Senaryo, ses, görsel ve kurgu saniyeler içinde hazır!</p>")
     
