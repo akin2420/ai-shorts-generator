@@ -69,7 +69,6 @@ def video_fabrikasi(konu, progress=gr.Progress()):
     try:
 
         progress(0.05, desc="Senaryo Ve Görsel Planı Hazırlanıyor... ")
-        print("📝 Senaryo ve görsel planı hazırlanıyor...")
         prompt = (f"Write a 30-second viral YouTube Shorts script about {konu}. "
                   "STRICT LIMIT: Maximum 65 words. English only. "
                   "CRITICAL INSTRUCTION: Start the script with a mind-blowing, highly engaging 3-second HOOK. "
